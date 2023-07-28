@@ -20,14 +20,10 @@ public class CatTest {
     }
 
     @Test
-    public void getFoodTest() {
+    public void getFoodTest() throws Exception {
         Cat cat = new Cat(feline);
-        try {
-            cat.getFood();
-            Mockito.verify(feline).eatMeat();
-        } catch (Exception e) {
-            System.out.println("Произошла ошибка во время выполнения");
-        }
+        cat.getFood();
+        Mockito.verify(feline).eatMeat();
 
     }
 

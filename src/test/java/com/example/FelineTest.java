@@ -15,14 +15,9 @@ public class FelineTest {
 
 
     @Test
-    public void eatMeatTest() {
-        try {
-            feline.eatMeat();
-            Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
-        } catch (Exception e) {
-            System.out.println("Произошла ошибка во время выполнения");
-        }
-
+    public void eatMeatTest() throws Exception {
+        feline.eatMeat();
+        Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
     }
 
     @Test

@@ -36,14 +36,9 @@ public class LionTest {
     }
 
     @Test
-    public void doesHaveManeTest() {
-        try {
-            Lion lion = new Lion(feline, sex);
-            Assert.assertEquals(hasManeExpected, lion.doesHaveMane());
-        } catch (Exception e) {
-            System.out.println("Произошла ошибка во время выполнения");
-        }
-
+    public void doesHaveManeTest() throws Exception {
+        Lion lion = new Lion(feline, sex);
+        Assert.assertEquals(hasManeExpected, lion.doesHaveMane());
     }
 
     @Test
@@ -52,14 +47,10 @@ public class LionTest {
     }
 
     @Test
-    public void getFoodTest() {
+    public void getFoodTest() throws Exception {
         Lion lion = new Lion(feline);
-        try {
-            lion.getFood();
-            Mockito.verify(feline).getFood("Хищник");
-        } catch (Exception e) {
-            System.out.println("Произошла ошибка во время выполнения");
-        }
+        lion.getFood();
+        Mockito.verify(feline).getFood("Хищник");
     }
 
     @Parameterized.Parameters
